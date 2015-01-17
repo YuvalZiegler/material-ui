@@ -91,6 +91,7 @@ var TouchRipple = React.createClass({
 
       //Wait 2 seconds and remove the ripple from DOM
       setTimeout(function() {
+        if(!this.isMounted()) return;
         ripples.shift();
         if (this.isMounted()) {
           this.setState({
